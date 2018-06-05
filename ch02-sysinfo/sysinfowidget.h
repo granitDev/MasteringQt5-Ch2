@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QTimer>
+#include <QGraphicsWidget>
 #include <QtCharts/QChartView>
 
 class SysInfoWidget : public QWidget
@@ -17,13 +18,11 @@ protected:
     QtCharts::QChartView &chartView();
 
 protected slots:
-    virtual void upsateSeries() = 0;
+    virtual void updateSeries() = 0;
 
 private:
     QTimer mRefreshTimer;
     QtCharts::QChartView mChartView;
-
-signals:
 
 public slots:
 };
